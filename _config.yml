@@ -1,22 +1,17 @@
-title : Dev Hub
+title: Dev Hub
 
 markdown: kramdown
 
 safe: true
 lsi: false
-pygments: true
-auto: true
+highlighter: pygments
 
-source: dev-hub
-destination: dev-hub
+# If running at root dir (e.g. CNAME, remove this line)
+baseurl: /dev-hub
 
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
-production_url : http://kinlane.github.io/dev-hub/
-
-BASE_PATH : http://kinlane.github.io/dev-hub/
-
 archive_path: /archive.html
-categories_path : /categories.html
-tags_path : /tags.html
+categories_path: /categories.html
+tags_path: /tags.html
