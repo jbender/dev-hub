@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Dev Hub
 overview: true
 ---
@@ -13,13 +12,13 @@ overview: true
 <div class="row-fluid">
     <div class="span1">&nbsp;</div>
     <div class="span4">
-        
+
         {% raw  %}
-        <script id="apiListingTemplate" type="text/template">       
-            <li><a href="api.html?#{{name}}"><strong>{{name}}</strong></a></li>                                                                                               
+        <script id="apiListingTemplate" type="text/template">
+            <li><a href="api.html?#{{name}}"><strong>{{name}}</strong></a></li>
         </script>
-        {% endraw %}        
-        
+        {% endraw %}
+
         <script type="text/javascript">
         function listAPIs()
             {
@@ -28,12 +27,12 @@ overview: true
                  $.each(data['apis'], function(key, val) {
                     var template = $('#apiListingTemplate').html();
                     var html = Mustache.to_html(template, val);
-                    $('#apiListing').append(html);                          
+                    $('#apiListing').append(html);
                     });
                 });
-            } 
+            }
         listAPIs();
-        </script>      
+        </script>
 
         <h2>APIs</h2>
         <div style="height: 150px; overflow: auto;">
@@ -43,13 +42,13 @@ overview: true
         <p><a class="btn" href="#">View APIs &raquo;</a></p>
     </div><!--/span-->
     <div class="span4">
-        
+
         {% raw  %}
-        <script id="dataListingTemplate" type="text/template">       
-            <li><a href="data.html?#{{title}}"><strong>{{title}}</strong></a></li>                                                                                               
+        <script id="dataListingTemplate" type="text/template">
+            <li><a href="data.html?#{{title}}"><strong>{{title}}</strong></a></li>
         </script>
-        {% endraw %}        
-        
+        {% endraw %}
+
         <script type="text/javascript">
         function listData()
             {
@@ -58,28 +57,28 @@ overview: true
                  $.each(data, function(key, val) {
                     var template = $('#dataListingTemplate').html();
                     var html = Mustache.to_html(template, val);
-                    $('#dataListing').append(html);                          
+                    $('#dataListing').append(html);
                     });
                 });
-            } 
+            }
         listData();
-        </script>          
-        
+        </script>
+
         <h2>Data</h2>
         <div style="height: 150px; overflow: auto;">
-            <ul id="dataListing"></ul>        
+            <ul id="dataListing"></ul>
         </div>
         <br />
         <p><a class="btn" href="data.html">View Data &raquo;</a></p>
     </div><!--/span-->
     <div class="span3">
-        
+
         {% raw  %}
-        <script id="codeListingTemplate" type="text/template">       
-            <li><a href="code.html?#{{Name}}"><strong>{{Name}}</strong></a></li>                                                                                               
+        <script id="codeListingTemplate" type="text/template">
+            <li><a href="code.html?#{{Name}}"><strong>{{Name}}</strong></a></li>
         </script>
-        {% endraw %}        
-        
+        {% endraw %}
+
         <script type="text/javascript">
         function listCode()
             {
@@ -88,16 +87,16 @@ overview: true
                  $.each(data['Code'], function(key, val) {
                     var template = $('#codeListingTemplate').html();
                     var html = Mustache.to_html(template, val);
-                    $('#codeListing').append(html);                          
+                    $('#codeListing').append(html);
                     });
                 });
-            } 
+            }
         listCode();
-        </script>          
-        
+        </script>
+
         <h2>Code</h2>
         <div style="height: 150px; overflow: auto;">
-        <ul id="codeListing"> </ul>         
+        <ul id="codeListing"> </ul>
         </div>
         <br />
         <p><a class="btn" href="code.html">View Code &raquo;</a></p>

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Data
 overview: true
 ---
@@ -10,19 +9,19 @@ overview: true
 <h2>Data</h2>
 <p>This is a listing of sample datasets currently available. Some of these datasets are also available via an API, but this represents a complete lists of files, which are also represented in the data.json file.</p>
 
-<!-- Begin List Code Samples--->
+<!-- Begin List Code Samples -->
 {% raw  %}
-<script id="dataAccessTemplate" type="text/template">       
-    <a href="{{accessURL}}" target="_blank"><strong>{{format}}</strong></a>                                                                                             
+<script id="dataAccessTemplate" type="text/template">
+    <a href="{{accessURL}}" target="_blank"><strong>{{format}}</strong></a>
 </script>
-<script id="dataListingTemplate" type="text/template">       
+<script id="dataListingTemplate" type="text/template">
     <tr>
         <td width="30%"><strong>{{title}}</strong></td>
         <td>{{keyword}}</td>
-        <td id="date-{{identifier}}">{{modified}}</td>    
+        <td id="date-{{identifier}}">{{modified}}</td>
         <td>{{publisher}}</td>
-        <td id="listing-{{identifier}}">&nbsp;</td>         
-    </tr>                                                                                          
+        <td id="listing-{{identifier}}">&nbsp;</td>
+    </tr>
 </script>
 {% endraw %}
 
@@ -31,35 +30,35 @@ overview: true
         <tr>
             <td width="30%"><strong>Title</strong></td>
             <td><strong>Keywords</strong></td>
-            <td><strong>Last Modified</strong></td>  
+            <td><strong>Last Modified</strong></td>
             <td><strong>Publisher</strong></td>
-            <td><strong>Links</strong></td>       
-        </tr>           
+            <td><strong>Links</strong></td>
+        </tr>
      </table>
-</div> 
+</div>
 
 <script type="text/javascript">
     function listData()
         {
         $.getJSON('data.json', function(data) {
              $.each(data, function(key, val) {
-                
+
                 var template = $('#dataListingTemplate').html();
                 var html = Mustache.to_html(template, val);
-                $('#dataListing').append(html); 
-                
+                $('#dataListing').append(html);
+
                 id = val['identifier'];
 
-                $.each(val['distribution'], function(key2, val2) {   
-                    
+                $.each(val['distribution'], function(key2, val2) {
+
                     var template2 = $('#dataAccessTemplate').html();
-                    var html2 = Mustache.to_html(template2, val2);                    
-                    $('#listing-'+id).append(html2); 
-                    
-                    });                      
+                    var html2 = Mustache.to_html(template2, val2);
+                    $('#listing-'+id).append(html2);
+
+                    });
                 });
             });
-        } 
+        }
     listData();
 </script>
-<!-- End List Code Simples--->
+<!-- End List Code Simples -->

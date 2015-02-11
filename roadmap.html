@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Roadmap
 overview: true
 ---
@@ -8,13 +7,13 @@ overview: true
 <p>This section is all about providing you with a roadmap of where we are going with this developers area, as well as what changes we've made in accordance with our roadmap. This section provides transparency into how the developer program is evolving, and give you a heads up on where we are going, hopefully you will provide feedback that we can integrate into the roadmap as well.</p>
 <div class="row">
     <div class="span6">
-        
+
         {% raw  %}
-        <script id="roadmapListingTemplate" type="text/template">       
-            <li><strong>{{Name}}</strong>&nbsp;<i>({{Date}})</i>&nbsp;-&nbsp;{{Description}}</li>                                                                                               
+        <script id="roadmapListingTemplate" type="text/template">
+            <li><strong>{{Name}}</strong>&nbsp;<i>({{Date}})</i>&nbsp;-&nbsp;{{Description}}</li>
         </script>
-        {% endraw %}        
-        
+        {% endraw %}
+
         <script type="text/javascript">
         function listRoadmap()
             {
@@ -23,12 +22,12 @@ overview: true
                  $.each(data['Roadmap'], function(key, val) {
                     var template = $('#roadmapListingTemplate').html();
                     var html = Mustache.to_html(template, val);
-                    $('#roadmapListing').append(html);                          
+                    $('#roadmapListing').append(html);
                     });
                 });
-            } 
+            }
         listRoadmap();
-        </script>      
+        </script>
 
         <ul class="toolbar">
             <li>{"<a href="json/roadmap.json" title="JSON" target="_blank">JSON</a>"}</li>
@@ -38,16 +37,16 @@ overview: true
         <div style="height: 300px; overflow: auto;">
             <ul id="roadmapListing"></ul>
         </div>
-        
+
     </div>
     <div class="span6">
-        
+
         {% raw  %}
-        <script id="changelogListingTemplate" type="text/template">       
-            <li><strong>{{Name}}</strong>&nbsp;<i>({{Date}})</i>&nbsp;-&nbsp;{{Description}}</li>                                                                                               
+        <script id="changelogListingTemplate" type="text/template">
+            <li><strong>{{Name}}</strong>&nbsp;<i>({{Date}})</i>&nbsp;-&nbsp;{{Description}}</li>
         </script>
-        {% endraw %}        
-        
+        {% endraw %}
+
         <script type="text/javascript">
         function listChangelog()
             {
@@ -56,12 +55,12 @@ overview: true
                  $.each(data['Changelog'], function(key, val) {
                     var template = $('#changelogListingTemplate').html();
                     var html = Mustache.to_html(template, val);
-                    $('#changelogListing').append(html);                          
+                    $('#changelogListing').append(html);
                     });
                 });
-            } 
+            }
         listChangelog();
-        </script>      
+        </script>
 
         <ul class="toolbar">
             <li>{"<a href="json/changelog.json" title="JSON" target="_blank">JSON</a>"}</li>
@@ -71,7 +70,7 @@ overview: true
         <div style="height: 300px; overflow: auto;">
             <ul id="changelogListing"></ul>
         </div>
-        
+
     </div>
 </div>
 <br />

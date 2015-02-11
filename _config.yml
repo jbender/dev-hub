@@ -15,3 +15,15 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 archive_path: /archive.html
 categories_path: /categories.html
 tags_path: /tags.html
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: post

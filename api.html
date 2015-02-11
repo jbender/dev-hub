@@ -1,11 +1,10 @@
 ---
-layout: default
 title: APIs @ VA
 overview: true
 ---
-  
+
  <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
-   
+
   <script type="text/javascript">
 $(function () {
     window.swaggerUi = new SwaggerUi({
@@ -16,7 +15,7 @@ $(function () {
     if(console) {
         console.log("Loaded SwaggerUI")
     }
-    
+
     $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
     },
     onFailure: function(data) {
@@ -36,6 +35,6 @@ $(function () {
 <p>This  area  provides access to API resources that allow you to access content and data for the purpose of building applications that support citizens.</p>
 <p>These APIs are not currently maintained by the government, it is meant to just be a prototype to help show various stakeholders in federal government, what is possible.</p>
 <p style="color:#FF0000; font-size:14px; font-weight: bold; text-align:center;"><strong><i>This page is still having issues displaying in Internet Explorer, try Firefox or Chrome until fixed!</i></strong></p>
-<div class="swagger-shell"> 
+<div class="swagger-shell">
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </div>
