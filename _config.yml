@@ -16,8 +16,6 @@ archive_path: /archive.html
 categories_path: /categories.html
 tags_path: /tags.html
 
-swagger_doc_location: http://petstore.swagger.io/v2/swagger.json
-
 defaults:
   -
     scope:

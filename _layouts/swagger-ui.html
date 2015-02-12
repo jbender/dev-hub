@@ -25,7 +25,7 @@
       $(function () {
         console.log('Page loaded');
         window.swaggerUi = new SwaggerUi({
-          url: "{{ site.swagger_doc_location }}",
+          url: "{{ page.swagger_doc_location }}",
           dom_id: "swagger-ui-container",
           supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
           onComplete: function(swaggerApi, swaggerUi){
