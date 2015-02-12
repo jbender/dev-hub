@@ -10,12 +10,10 @@ highlighter: pygments
 # If running at root dir (e.g. CNAME, remove this line)
 baseurl: /dev-hub
 
-permalink: /:categories/:year/:month/:day/:title
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+permalink: /blog/:categories/:year/:month/:day/:title
+relative_permalinks: true
 
-archive_path: /archive.html
-categories_path: /categories.html
-tags_path: /tags.html
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 defaults:
   -
