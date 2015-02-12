@@ -26,3 +26,6 @@ defaults:
       path: "_posts"
     values:
       layout: post
+
+# Your Google Analytics Property Code
+ga_code: UA-59675880-1

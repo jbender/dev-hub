@@ -16,6 +16,7 @@
     </section>
 
     {% include footer.html %}
+    {% include analytics.html %}
 
     {% for file in site.data.swagger.js_deps %}
       <script src="{{site.data.swagger.cdn}}{{file}}" type="text/javascript"></script>
