@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  {% include head.html %}
+
+  <body class="wrap">
+
+    {% include header.html %}
+
+    <section>
+      <div class="container">
+        {{ content }}
+      </div>
+      <div class="swagger-section">
+        <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+    {% for file in site.data.swagger.js_deps %}
+      <script src="{{site.data.swagger.cdn}}{{file}}" type="text/javascript"></script>
+    {% endfor %}
+
+    <script type="text/javascript">
+      $(function () {
+        console.log('Page loaded');
+        window.swaggerUi = new SwaggerUi({
+          url: "{{ site.swagger_doc_location }}",
+          dom_id: "swagger-ui-container",
+          supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+          onComplete: function(swaggerApi, swaggerUi){
+            if (console) { console.log("Loaded SwaggerUI") }
+            $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+          },
+          onFailure: function(data) {
+            if (console) {
+              console.log("Unable to Load SwaggerUI");
+              console.log(data);
+            }
+          },
+          docExpansion: "none",
+          sorter: "alpha"
+        });
+        window.swaggerUi.load();
+      });
+    </script>
+
+  </body>
+</html>

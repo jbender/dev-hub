@@ -1,0 +1,14 @@
+---
+---
+
+// Include remote files first so they can be overruled lower down
+@import "{{ site.data.swagger.cdn }}/css/screen.css";
+
+#swagger-ui-container.swagger-ui-wrap {
+  .container {
+    width: 100%;
+  }
+  #resources {
+    margin-left: 0;
+  }
+}
